@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Portfolio</title>
+	<style>
+		body 
+		{
+			font-family: Constantia, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: black;
+		}
+		
+		#webform h2
+		{
+			color:purple;
+			text-align:center;
+		}
+		
+		#webform label
+		{
+			color:black;
+			text-align:left;
+		}
+		
+		#webform, #portfolio 
+		{
+			display: none;
+			padding: 100px;
+			background-color: none;
+			color: black;
+			content-align:center;
+			max-width: 600px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+			color:black;
+		}
+		
+		form
+		{
+			display: flex;
+			flex-direction: column;
+		}
+		
+		input
+		{
+			margin-bottom: 15px;
+			padding: 10px;
+			border: 1px solid #8e44ad;
+			border-radius: 3px;
+			color: black;
+		}
+		
+		button
+		{
+			background-color:green;
+			text-align: center;
+			padding: 10px;
+			font-family:Constantia;
+			color:white;
+			font-size:15px;
+		}
+		
+		nav 
+		{
+			margin-bottom: 20px;
+			background-color: #333;
+			padding: 30px;
+		}
+		
+		nav a 
+		{
+			padding: 10px 15px;
+			text-decoration: none;
+			border: 1px solid black;
+			margin-right: 5px;
+			color:white;
+			font-size:20px;
+		}
+		
+		nav a.active 
+		{
+			background-color: black;
+			color: white;
+		}
+		
+		.projects, .skills 
+		{
+			margin-top: 20px;
+		}
+		
+		.project-item, .skill-item 
+		{
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="#" id="formLink">Student Details Form</a>
+		<a href="#" id="portfolioLink">Student Portfolio</a>
+	</nav>
+	
+	<div id="webform">
+		<h2>Student Sign-up</h2>
+		<form action="pg-2.html">
+			<label for="name">Name:</label><br>
+			<input type="text" id="name" name="name" required><br>
+			<label for="email">Email:</label><br>
+			<input type="email" id="email" name="email" required><br>
+			<button type="submit">Sign Up</button>
+		</form>
+	</div>
+	
+	<div id="portfolio">
+		<h2>About Me</h2>
+		<p>Hello! I am Tejas Naik a dedicated and ambitious student, currently pursuing a B.Tech degree at NMAMIT. With a keen interest in problem- solving and a strong analytical acumen, I excel at unraveling intricate challenges and transforming them into actionable solutions. As I
+			continue to expand my skill set and explore new horizons, I am resolutely focused on contributing my abilities to the dynamic realmof
+			technology and data-driven innovation.
+		</p>
+		<div class="projects">
+			<h3>Personal-Project</h3>
+			<div class="project-item">
+				<p>Data Exploration and analysis for Wine Quality Dataset</p>
+			</div>
+			<div class="project-item">
+				<h3>Certificates</h3>
+				<p><ul>
+					<li>Pandas and NumPy Tips, Tricks, and Techniques</li>
+					<li>Exploratory Data Analysis with Pandas and Python 3.x</li>
+					<li>Machine Learning Fundamentals</li>
+					<li>Basics of Linear Algebra using Python</li>
+				</p>
+			</div>
+		</div>
+		<div class="skills">
+			<h3>Skills</h3>
+			<div class="skill-item">HTML & CSS</div>
+			<div class="skill-item">JavaScript</div>
+			<div class="skill-item">Python</div>
+		</div>
+	</div>
+	
+	<script>
+		document.getElementById('formLink').addEventListener('click', function(e) 
+		{
+			e.preventDefault();
+			document.getElementById('webform').style.display = 'block';
+			document.getElementById('portfolio').style.display = 'none';
+			e.target.classList.add('active');
+			document.getElementById('portfolioLink').classList.remove('active');
+		});
+		
+		document.getElementById('portfolioLink').addEventListener('click', function(e) 
+		{
+			e.preventDefault();
+			document.getElementById('webform').style.display = 'none';
+			document.getElementById('portfolio').style.display = 'block';
+			e.target.classList.add('active');
+			document.getElementById('formLink').classList.remove('active');
+		});
+	</script>
+</body>
+</html>
